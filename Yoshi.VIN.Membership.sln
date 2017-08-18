@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yoshi.VIN.Membership.Data.EF", "Yoshi.VIN.Membership.Data.EF\Yoshi.VIN.Membership.Data.EF.csproj", "{203DC84E-C912-46D6-BF67-9BD9F50EFAF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yoshi.VIN.Membership.Models", "Yoshi.VIN.Membership.Models\Yoshi.VIN.Membership.Models.csproj", "{843C277C-86DF-4672-A0F7-0E5923FDD3DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yoshi.VIN.Membership.Console", "Yoshi.VIN.Membership.Console\Yoshi.VIN.Membership.Console.csproj", "{FD69E7FC-4753-4AB2-84DD-94B5F2F0AF76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yoshi.VIN.Membership.Web.API", "Yoshi.VIN.Membership.Web.API\Yoshi.VIN.Membership.Web.API.csproj", "{E3721927-C4BF-4A00-A1B3-09B1381F34A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yoshi.VIN.Membership.Repositories", "Yoshi.VIN.Repositories\Yoshi.VIN.Membership.Repositories.csproj", "{90641E29-6302-4534-8DE4-5CBAE494CC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yoshi.VIN.Common", "Yoshi.VIN.Common\Yoshi.VIN.Common.csproj", "{11160A26-4BB8-4086-814B-DEF143111A0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{203DC84E-C912-46D6-BF67-9BD9F50EFAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203DC84E-C912-46D6-BF67-9BD9F50EFAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203DC84E-C912-46D6-BF67-9BD9F50EFAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203DC84E-C912-46D6-BF67-9BD9F50EFAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843C277C-86DF-4672-A0F7-0E5923FDD3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843C277C-86DF-4672-A0F7-0E5923FDD3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843C277C-86DF-4672-A0F7-0E5923FDD3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843C277C-86DF-4672-A0F7-0E5923FDD3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD69E7FC-4753-4AB2-84DD-94B5F2F0AF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD69E7FC-4753-4AB2-84DD-94B5F2F0AF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD69E7FC-4753-4AB2-84DD-94B5F2F0AF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD69E7FC-4753-4AB2-84DD-94B5F2F0AF76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3721927-C4BF-4A00-A1B3-09B1381F34A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3721927-C4BF-4A00-A1B3-09B1381F34A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3721927-C4BF-4A00-A1B3-09B1381F34A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3721927-C4BF-4A00-A1B3-09B1381F34A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90641E29-6302-4534-8DE4-5CBAE494CC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90641E29-6302-4534-8DE4-5CBAE494CC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90641E29-6302-4534-8DE4-5CBAE494CC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90641E29-6302-4534-8DE4-5CBAE494CC63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11160A26-4BB8-4086-814B-DEF143111A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11160A26-4BB8-4086-814B-DEF143111A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11160A26-4BB8-4086-814B-DEF143111A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11160A26-4BB8-4086-814B-DEF143111A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A776A7E-FD96-4452-88DF-31A02F07E089}
+	EndGlobalSection
+EndGlobal
