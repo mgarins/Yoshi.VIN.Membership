@@ -15,19 +15,19 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
     [Route("api/Members")]
     public class MembersController : Controller
     {
-        private readonly IUnitOfWork _uow;
+        private readonly IUnitOfWork uow;
 
 
         public MembersController(IUnitOfWork unitOfWork)
         {
-            _uow = unitOfWork;
+            uow = unitOfWork;
         }
 
         // GET: api/Members
         [HttpGet]
         public IEnumerable<Member> GetMember()
         {
-            return _uow.MemberRepository.GetAll();
+            return uow.MemberRepository.GetAll();
         }
 
         // GET: api/Members/5
@@ -39,7 +39,7 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var member = await _uow.MemberRepository.SingleOrDefaultAsync(m => m.ID == id);
+            var member = await uow.MemberRepository.SingleOrDefaultAsync(m => m.ID == id);
 
             if (member == null)
             {
@@ -65,8 +65,8 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
 
             try
             {
-                _uow.MemberRepository.Update(member);
-                await _uow.CommitAsync();
+                uow.MemberRepository.Update(member);
+                await uow.CommitAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -92,8 +92,8 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            _uow.MemberRepository.Insert(member);
-            await _uow.CommitAsync();
+            uow.MemberRepository.Insert(member);
+            await uow.CommitAsync();
 
             return CreatedAtAction("GetMember", new { id = member.ID }, member);
         }
@@ -107,21 +107,21 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var member = await _uow.MemberRepository.SingleOrDefaultAsync(m => m.ID == id);
+            var member = await uow.MemberRepository.SingleOrDefaultAsync(m => m.ID == id);
             if (member == null)
             {
                 return NotFound();
             }
 
-            _uow.MemberRepository.Delete(member);
-            await _uow.CommitAsync();
+            uow.MemberRepository.Delete(member);
+            await uow.CommitAsync();
 
             return Ok(member);
         }
 
         private bool MemberExists(int id)
         {
-            return _uow.MemberRepository.MemberExists(id);
+            return uow.MemberRepository.MemberExists(id);
         }
     }
 }
