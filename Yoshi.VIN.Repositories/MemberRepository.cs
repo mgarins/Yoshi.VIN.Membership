@@ -19,6 +19,11 @@ namespace Yoshi.VIN.Membership.Repositories
             ctx = context;
         }
 
+        public IEnumerable<Member> GetAll()
+        {
+            return ctx.Members.AsEnumerable<Member>();
+        }
+
         public bool MemberExists(int id)
         {
             return ctx.Members.Any(m => m.ID == id);

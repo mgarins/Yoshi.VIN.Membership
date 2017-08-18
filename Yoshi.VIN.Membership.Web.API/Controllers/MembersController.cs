@@ -27,7 +27,7 @@ namespace Yoshi.VIN.Membership.Web.API.Controllers
         [HttpGet]
         public IEnumerable<Member> GetMember()
         {
-            return null;
+            return _uow.MemberRepository.GetAll();
         }
 
         // GET: api/Members/5

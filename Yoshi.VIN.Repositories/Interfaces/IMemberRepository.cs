@@ -10,6 +10,7 @@ namespace Yoshi.VIN.Membership.Repositories.Interfaces
     public interface IMemberRepository : IGenericRepository<Member>, IGenericRepositoryAsync<Member>
     {
         bool MemberExists(int id);
+        IEnumerable<Member> GetAll();
         
     }
 }
