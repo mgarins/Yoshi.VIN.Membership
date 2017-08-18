@@ -21,14 +21,9 @@ namespace Yoshi.VIN.Membership.Repositories.Interfaces
 
     public interface IGenericRepositoryAsync<TEntity> where TEntity : class
     {
-        Task DeleteAsync(object id);
-        Task DeleteAsync(TEntity entityToDelete);
         Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
         Task<TEntity> GetByIDAsync(object id);
-        Task InsertAsync(TEntity entity);
-        Task UpdateAsync(TEntity entityToUpdate);
         Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate = null);
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate = null);
-
     }
 }

@@ -41,6 +41,11 @@ namespace Yoshi.VIN.Membership.Repositories
             context.SaveChanges();
         }
 
+        public Task CommitAsync()
+        {
+            return context.SaveChangesAsync();
+        }
+
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {

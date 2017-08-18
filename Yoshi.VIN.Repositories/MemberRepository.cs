@@ -18,5 +18,10 @@ namespace Yoshi.VIN.Membership.Repositories
         {
             ctx = context;
         }
+
+        public bool MemberExists(int id)
+        {
+            return ctx.Members.Any(m => m.ID == id);
+        }
     }
 }

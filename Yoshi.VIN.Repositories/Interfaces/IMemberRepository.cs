@@ -7,8 +7,9 @@ using Yoshi.VIN.Membership.Models;
 
 namespace Yoshi.VIN.Membership.Repositories.Interfaces
 {
-    public interface IMemberRepository : IGenericRepository<Member>
+    public interface IMemberRepository : IGenericRepository<Member>, IGenericRepositoryAsync<Member>
     {
+        bool MemberExists(int id);
         
     }
 }

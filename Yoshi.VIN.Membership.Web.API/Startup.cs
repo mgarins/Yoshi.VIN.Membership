@@ -30,7 +30,6 @@ namespace Yoshi.VIN.Membership.Web.API
             services.AddMvc();
             services.Configure<Common.Connections>(Configuration.GetSection("ConnectionStrings"));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IUnitOfWorkAsync, UnitOfWorkAsync>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,6 +9,7 @@ namespace Yoshi.VIN.Membership.Repositories.Interfaces
     public interface IUnitOfWork
     {
         void Commit();
+        Task CommitAsync();
         IMemberRepository MemberRepository { get; }
 
     }

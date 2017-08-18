@@ -10,7 +10,8 @@ using Yoshi.VIN.Membership.Repositories.Interfaces;
 
 namespace Yoshi.VIN.Membership.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity>,
+                                                IGenericRepositoryAsync<TEntity> where TEntity : class
     {
         internal MemberContext context;
         internal DbSet<TEntity> dbSet;
@@ -98,5 +99,53 @@ namespace Yoshi.VIN.Membership.Repositories
             return query.FirstOrDefault();
         }
 
+        public virtual async Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null,
+                                                Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+                                                string includeProperties = "")
+        {
+            IQueryable<TEntity> query = dbSet;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            if (orderBy != null)
+            {
+                return await orderBy(query).ToListAsync();
+            }
+            else
+            {
+                return await query.ToListAsync();
+            }
+        }
+        public virtual Task<TEntity> GetByIDAsync(object id)
+        {
+            return dbSet.FindAsync(id);
+        }
+        public virtual Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            IQueryable<TEntity> query = dbSet;
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+            return query.SingleOrDefaultAsync<TEntity>();
+        }
+        public virtual Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            IQueryable<TEntity> query = dbSet;
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+            return query.FirstOrDefaultAsync<TEntity>();
+        }
     }
 }
