@@ -9,6 +9,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+// ag-grid
+import { AgGridModule } from "ag-grid-angular/main";
 
 @NgModule({
     declarations: [
@@ -22,6 +24,7 @@ import { CounterComponent } from './components/counter/counter.component';
         CommonModule,
         HttpModule,
         FormsModule,
+        AgGridModule.withComponents([]),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
