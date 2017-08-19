@@ -9,6 +9,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { MemberListComponent } from './components/memberlist/memberlist.component';
+import { MemberAddComponent } from './components/memberadd/memberadd.component';
 // ag-grid
 import { AgGridModule } from "ag-grid-angular/main";
 
@@ -18,7 +20,9 @@ import { AgGridModule } from "ag-grid-angular/main";
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        MemberListComponent,
+        MemberAddComponent 
     ],
     imports: [
         CommonModule,

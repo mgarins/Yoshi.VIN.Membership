@@ -11,9 +11,10 @@ using Yoshi.VIN.Membership.Data.EF;
 namespace Yoshi.VIN.Membership.Data.EF.Migrations
 {
     [DbContext(typeof(MemberContext))]
-    partial class MemberContextModelSnapshot : ModelSnapshot
+    [Migration("20170819201447_IDToLong")]
+    partial class IDToLong
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

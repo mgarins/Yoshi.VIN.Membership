@@ -16,7 +16,7 @@ namespace Yoshi.VIN.Membership.Models
         [Required]
         [Key]
         [Display(Name = "Id")]
-        public int ID { get; set; }
+        public long ID { get; set; }
 
         [Column(@"UserName", Order = 2)]
         [Required(ErrorMessage = "* Required")]
