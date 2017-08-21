@@ -1,7 +1,5 @@
-﻿<div>
-    <h1>VIN Member List</h1>
-    <p *ngIf="!members"><em>Loading...</em></p>
-    <table class='table' *ngIf="members">
+﻿<div class="table-responsive">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>User Name</th>
@@ -15,19 +13,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let m of members" (click)="onSelect(member)">
+            <tr *ngFor="let m of membersList" (click)="onSelect(m)">
                 <td>{{ m.userName }}</td>
                 <td>{{ m.firstName }}</td>
                 <td>{{ m.lastName }}</td>
                 <td>{{ m.email }}</td>
                 <td>{{ m.phone }}</td>
                 <td>{{ m.dob }}</td>
-                <td><span class="badge glyphicon-edit"></span></td>
-                <td><span class="badge glyphicon-remove"></span></td>
+                <td>
+                    <button type="button" class="btn">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn" (click)="removeMember(m)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
-<member-details [currentMember]="selectedMember">
-
-</member-details>

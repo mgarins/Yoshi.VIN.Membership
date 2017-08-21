@@ -9,8 +9,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { MemberListComponent } from './components/memberlist/memberlist.component';
-import { MemberAddComponent } from './components/memberadd/memberadd.component';
+import { MembershipApp } from './components/membership/membership.component';
+import { MemberListComponent } from './components/membership/memberlist.component';
+
 
 @NgModule({
     declarations: [
@@ -18,8 +19,8 @@ import { MemberAddComponent } from './components/memberadd/memberadd.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        MemberAddComponent,
         MemberListComponent,
+        MembershipApp,
         HomeComponent
     ],
     imports: [
@@ -31,7 +32,7 @@ import { MemberAddComponent } from './components/memberadd/memberadd.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'member-list', component: MemberListComponent },
+            { path: 'member-list', component: MembershipApp },
             { path: '**', redirectTo: 'home' }
         ])
     ]
