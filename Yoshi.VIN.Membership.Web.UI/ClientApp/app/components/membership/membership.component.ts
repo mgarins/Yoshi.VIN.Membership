@@ -21,6 +21,7 @@ export class MembershipApp implements OnInit {
             .subscribe(
             (members) => {
                 this.members = members;
+                console.log(members.length);
             }
             );
     }

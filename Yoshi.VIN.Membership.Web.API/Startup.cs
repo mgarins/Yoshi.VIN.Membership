@@ -28,6 +28,8 @@ namespace Yoshi.VIN.Membership.Web.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
+            
             services.Configure<Common.Connections>(Configuration.GetSection("ConnectionStrings"));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
@@ -39,7 +41,7 @@ namespace Yoshi.VIN.Membership.Web.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(option => option.AllowAnyOrigin());
             app.UseMvc();
         }
     }
