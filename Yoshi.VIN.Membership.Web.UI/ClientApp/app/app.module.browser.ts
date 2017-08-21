@@ -10,6 +10,7 @@ import { AppComponent } from './components/app/app.component';
         AppModuleShared
     ],
     providers: [
+        { provide: 'API_URL', useValue: 'http://localhost:1867/' },
         { provide: 'BASE_URL', useFactory: getBaseUrl }
     ]
 })

@@ -1,1 +1,33 @@
-﻿
+﻿<div>
+    <h1>VIN Member List</h1>
+    <p *ngIf="!members"><em>Loading...</em></p>
+    <table class='table' *ngIf="members">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>DOB</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of members" (click)="onSelect(member)">
+                <td>{{ m.userName }}</td>
+                <td>{{ m.firstName }}</td>
+                <td>{{ m.lastName }}</td>
+                <td>{{ m.email }}</td>
+                <td>{{ m.phone }}</td>
+                <td>{{ m.dob }}</td>
+                <td><span class="badge glyphicon-edit"></span></td>
+                <td><span class="badge glyphicon-remove"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<member-details [currentMember]="selectedMember">
+
+</member-details>

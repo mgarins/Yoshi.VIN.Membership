@@ -1,25 +1,32 @@
-﻿import { Component, Inject } from '@angular/core';
+﻿import { Component, Inject, ViewEncapsulation, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { Member } from '../../models/member';
+import { MemberAddComponent } from '../memberadd/memberadd.component';
+import { MemberService } from '../../services/member.service';
 
 @Component({
     selector: 'member-list',
-    templateUrl: './memberlist.component.html'
+    templateUrl: './memberlist.component.html',
+    providers: [MemberService]
 })
-export class MemberListComponent {
+
+export class MemberListComponent implements OnInit {
     public members: Member[];
+    selectedMember: Member;
 
-    constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/Members').subscribe(result => {
-            this.members = result.json() as Member[];
-        }, error => console.error(error));
+    constructor(private memberService: MemberService) { }
+
+    public ngOnInit() {
+        this.memberService
+            .getMembers()
+            .subscribe(
+            (members) => {
+                this.members = members;
+            }
+            );
     }
-}
 
-interface Member {
-    userName: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: number;
-    dob: string; 
+    onSelect(member: Member): void {
+        this.selectedMember = member;
+    }
 }

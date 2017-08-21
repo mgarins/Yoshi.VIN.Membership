@@ -8,16 +8,10 @@ namespace Yoshi.VIN.Membership.Repositories
 {
     public class PagedResult<TEntity>
     {
-        IEnumerable<TEntity> _items;
-        int _totalCount;
-
-        public PagedResult(IEnumerable<TEntity> items, int totalCount)
-        {
-            _items = items;
-            _totalCount = totalCount;
-        }
-
-        public IEnumerable<TEntity> Items { get { return _items; } }
-        public int TotalCount { get { return _totalCount; } }
+        public IList<TEntity> Results { get; set; }
+        public int CurrentPage { get; set; }
+        public int PageCount { get; set; }
+        public int PageSize { get; set; }
+        public int TotalRows { get; set; }
     }
 }
