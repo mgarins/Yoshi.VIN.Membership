@@ -39,7 +39,7 @@ export class MembershipApp implements OnInit {
 
     }
 
-    onUpdateMember(member: Member) {
+    onEditMember(member: Member) {
         this.memberService
             .updateMember(member)
             .subscribe(

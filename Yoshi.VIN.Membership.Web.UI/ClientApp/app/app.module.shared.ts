@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { DataTableModule } from "angular2-datatable";
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -34,7 +35,8 @@ import { MemberListComponent } from './components/membership/memberlist.componen
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'member-list', component: MembershipApp },
             { path: '**', redirectTo: 'home' }
-        ])
+        ]),
+        DataTableModule
     ]
 })
 export class AppModuleShared {
