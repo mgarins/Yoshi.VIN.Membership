@@ -12,6 +12,9 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { MembershipApp } from './components/membership/membership.component';
 import { MemberListComponent } from './components/membership/memberlist.component';
+import { ContactDetailsComponent } from './components/contactdetails/contactdetails.component';
+
+import { PhoneFormatPipe } from './components/phonepipe/phone.pipe.module';
 
 
 @NgModule({
@@ -22,12 +25,14 @@ import { MemberListComponent } from './components/membership/memberlist.componen
         FetchDataComponent,
         MemberListComponent,
         MembershipApp,
+        ContactDetailsComponent,
         HomeComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
+        PhoneFormatPipe,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

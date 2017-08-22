@@ -31,7 +31,7 @@
                 <td>{{ m.firstName }}</td>
                 <td>{{ m.lastName }}</td>
                 <td>{{ m.email }}</td>
-                <td>{{ m.phone }}</td>
+                <td>{{ m.phoneNumber | phoneFormat  }}</td>
                 <td>{{ m.dob | date: 'longDate' }}</td>
                 <td>
                     <button type="button" class="btn" (click)="editMember(m)">

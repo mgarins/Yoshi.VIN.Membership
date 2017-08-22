@@ -1,15 +1,16 @@
-﻿import { Component, Inject, ViewEncapsulation, OnInit , EventEmitter, Input, Output} from '@angular/core';
+﻿import { Component, Inject, ViewEncapsulation, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Http } from '@angular/http';
 import { Member } from '../../models/member';
 import { DataTableModule } from "angular2-datatable";
 import { DatePipe } from '@angular/common';
+
 
 @Component({
     selector: 'member-list',
     templateUrl: './memberlist.component.html'
 })
 
-export class MemberListComponent  {
+export class MemberListComponent {
     @Input()
     memberList: Member[];
 
@@ -22,10 +23,12 @@ export class MemberListComponent  {
     }
 
     removeMember(member: Member) {
+        alert('Remove');
         this.remove.emit(member);
     }
 
     editMember(member: Member) {
+        alert('Edit');
         this.edit.emit(member);
     }
 }
