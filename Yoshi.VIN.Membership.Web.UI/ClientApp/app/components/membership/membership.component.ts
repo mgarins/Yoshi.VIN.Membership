@@ -28,7 +28,7 @@ export class MembershipApp implements OnInit {
 
     constructor(private memberService: MemberService) { }
 
-    onAddMember(member :Member) {
+    onAddMember(member: Member) {
         this.memberService
             .createMember(member)
             .subscribe(
@@ -40,20 +40,22 @@ export class MembershipApp implements OnInit {
     }
 
     onEditMember(member: Member) {
-        this.memberService
-            .updateMember(member)
-            .subscribe(
-            (updatedMember) => {
-                member = updatedMember;
-            }
-            );
+        alert('OnEdit: ' + member.id);
+        // throw ui UI to edit
+        //this.memberService
+        //    .updateMember(member)
+        //    .subscribe(
+        //    (updatedMember) => {
+        //        member = updatedMember;
+        //    }
+        //    );
     }
 
     onRemoveMember(member: Member) {
         this.memberService
             .deleteMember(member.id)
             .subscribe(
-            (_) => {
+            (isRemoved) => {
                 this.members = this.members.filter((m) => m.id !== member.id);
             }
             );

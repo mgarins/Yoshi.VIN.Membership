@@ -9,6 +9,7 @@ using Yoshi.VIN.Membership.Models;
 using Yoshi.VIN.Membership.Web.API.Models;
 using Yoshi.VIN.Membership.Repositories.Interfaces;
 
+
 namespace Yoshi.VIN.Membership.Web.API.Controllers
 {
     [Produces("application/json")]

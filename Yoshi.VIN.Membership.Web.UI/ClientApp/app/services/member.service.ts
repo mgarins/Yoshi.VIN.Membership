@@ -47,6 +47,7 @@ export class MemberService {
 
     public updateMember(member: Member): Observable<Member> {
         var url: string = this.apiUrl + 'api/Members/';
+        console.log('Service Update Member: ' + member.id);
         return this.http
             .put(url + member.id, member)
             .map(response => {
@@ -55,12 +56,12 @@ export class MemberService {
             .catch(this.handleError);
     }
 
-    public deleteMember(id: number): Observable<null> {
+    public deleteMember(id: number): Observable<boolean> {
         var url: string = this.apiUrl + 'api/Members/';
-
+        console.log('Delete Member: ' + id);
         return this.http
             .delete(url + id)
-            .map(response => null)
+            .map(response => { response.ok })
             .catch(this.handleError);
     }
 

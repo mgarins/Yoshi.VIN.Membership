@@ -41,7 +41,9 @@ namespace Yoshi.VIN.Membership.Web.API
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(option => option.AllowAnyOrigin());
+            app.UseCors(options => options.AllowAnyOrigin()
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod());
             app.UseMvc();
         }
     }

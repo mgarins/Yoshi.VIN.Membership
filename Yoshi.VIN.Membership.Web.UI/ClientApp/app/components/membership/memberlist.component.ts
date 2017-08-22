@@ -15,20 +15,20 @@ export class MemberListComponent {
     memberList: Member[];
 
     @Output()
-    remove: EventEmitter<Member> = new EventEmitter();
-    edit: EventEmitter<Member> = new EventEmitter();
+    removeClicked: EventEmitter<Member> = new EventEmitter();
+    editClicked: EventEmitter<Member> = new EventEmitter();
 
     constructor() {
 
     }
 
     removeMember(member: Member) {
-        alert('Remove');
-        this.remove.emit(member);
+        console.log('Remove Member Clicked ' + member.id);
+        this.removeClicked.emit(member);
     }
 
     editMember(member: Member) {
-        alert('Edit');
-        this.edit.emit(member);
+        console.log('Edit Member Clicked ' + member.id);
+        this.editClicked.emit(member);
     }
 }
