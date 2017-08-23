@@ -4,8 +4,10 @@
 
 export class PhonePipe implements PipeTransform {
     transform(tel: number, args: any) {
+        if (tel === null)
+            return "";
         var value = tel.toString().trim().replace(/^\+/, '');
-
+        console.log(value);
         if (value.match(/[^0-9]/)) {
             return value;
         }
