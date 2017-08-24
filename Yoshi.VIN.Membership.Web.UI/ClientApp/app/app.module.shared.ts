@@ -6,25 +6,25 @@ import { RouterModule } from '@angular/router';
 import { DataTableModule } from "angular2-datatable";
 
 // Angular Bootstrap stuff
-import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 // app components 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { MembershipModule } from './components/membership-alt/membership.component';
 import { ContactDetailsComponent } from './components/contactdetails/contactdetails.component';
 
 import { PhoneFormatPipe } from './components/phonepipe/phone.pipe.module';
 
+import { NgbdModalBasic } from './components/basic/modal-basic';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        FetchDataComponent,
         MembershipModule,
+        NgbdModalBasic,
         ContactDetailsComponent,
         HomeComponent
     ],
@@ -39,8 +39,8 @@ import { PhoneFormatPipe } from './components/phonepipe/phone.pipe.module';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
             { path: 'member-list', component: MembershipModule },
+            { path: 'basic', component: NgbdModalBasic },
             { path: '**', redirectTo: 'home' }
         ]),
         DataTableModule
